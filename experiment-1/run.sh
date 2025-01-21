@@ -11,19 +11,19 @@ N_SETS=$2
 ASSOC=$3
 CONFIG=$N_SETS:16:$ASSOC
 
-RESULTS_DIR=$DIR/results/exp-1
+RESULTS_DIR=$DIR/experiment-1/data
 RESULTS_GCC_SPLIT_FILE=$RESULTS_DIR/gcc_split.csv
 RESULTS_GCC_UNIFIED_FILE=$RESULTS_DIR/gcc_unified.csv
 RESULTS_GO_SPLIT_FILE=$RESULTS_DIR/go_split.csv
 RESULTS_GO_UNIFIED_FILE=$RESULTS_DIR/go_unified.csv
 
-TMP_FILE=$DIR/tmp.txt
+TMP_FILE=$DIR/experiment-1/tmp.txt
 
 exec_gcc_split_cache() 
 {
 	echo "Running GCC_4 benchmark with split cache $N_SETS:16:$ASSOC:l..."
 
-	./simplesim-3.0/sim-cache 		\
+	$DIR/simplesim-3.0/sim-cache 	\
 		-cache:il1 il1:$CONFIG:l 	\
 		-cache:dl1 dl1:$CONFIG:l 	\
 		-cache:il2 none 			\
@@ -79,7 +79,7 @@ exec_gcc_unified_cache()
 {
 	echo "Running GCC_4 benchmark with unified cache $N_SETS:16:$ASSOC:l..."
 	
-	./simplesim-3.0/sim-cache 		\
+	$DIR/simplesim-3.0/sim-cache 	\
 		-cache:il1 dl1 				\
 		-cache:dl1 ul1:$CONFIG:l 	\
 		-cache:il2 none 			\
@@ -129,7 +129,7 @@ exec_go_split_cache()
 {
 	echo "Running GO_1 benchmark with split cache $N_SETS:16:$ASSOC:l..."
 	
-	./simplesim-3.0/sim-cache 		\
+	$DIR/simplesim-3.0/sim-cache 	\
 		-cache:il1 il1:$CONFIG:l 	\
 		-cache:dl1 dl1:$CONFIG:l 	\
 		-cache:il2 none 			\
@@ -184,7 +184,8 @@ exec_go_split_cache()
 exec_go_unified_cache() 
 {
 	echo "Running GO_1 benchmark with unified cache $N_SETS:16:$ASSOC:l..."
-	./simplesim-3.0/sim-cache 		\
+
+	$DIR/simplesim-3.0/sim-cache 	\
 		-cache:il1 dl1 				\
 		-cache:dl1 ul1:$CONFIG:l 	\
 		-cache:il2 none 			\

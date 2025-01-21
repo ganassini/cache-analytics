@@ -1,3 +1,0 @@
-n_sets,b_size,assoc,repl,cache_size,instructions_used,load_stores,ul1_hits,ul1_misses
-2,16,4,l,128,40369883,14844749,27884705,27441311
-2,16,8,l,256,40369883,14844749,30981941,24344075
