@@ -1,4 +1,0 @@
-instructions executed = 40389305
-load/stores = 14849606
-misses cache de instrucoes = 5445985
-misses cache de dados = 423467

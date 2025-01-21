@@ -1,0 +1,9 @@
+ GCC_4:
+ sim-cache -config <config file> cc1.ss jump.i 
+ 
+ GO_1:
+ sim-cache -config <config file> go.ss 50 9 2stone9.in
+
+ SAMPLE_SPLIT:
+ 	simplesim-3.0/sim-cache -cache:il1 il1:16:16:256:l -cache:dl1 dl1:16:16:256:l -cache:il2 none -cache:dl2 none -tlb:itlb none -tlb:dtlb none benchmarks/gcc/cc1.ss jump.i
+

@@ -4,10 +4,26 @@
 
 ## TODO
     [ ] exp-1
-        [ ] write to csv file
-        [ ] go benchmark
+        [x] write to csv file
+        [x] go split benchmark
+        [ ] unified cache benchmark
+        [ ] main script
         [ ] matplotlib
     [ ] exp-2
     [ ] exp-3
     [ ] exp-4
     [ ] exp-bonus
+
+## Tutorial
+
+```bash
+ git clone https://github.com/ganassini/cache-sim
+ cd cache-sim
+ git clone https://github.com/toddmaustin/simplesim-3.0
+ cd simplesim-3.0
+ make config-pisa
+ make
+ cd ..
+ vim run_exp_1.sh # modify $DIR variable in run_exp_1.sh to match the path
+ ./run_exp_1.sh [gcc|go] [n_sets] [assoc]
+```

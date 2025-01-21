@@ -1,5 +1,0 @@
- GCC_4:
- sim-cache -config <config file> cc1.ss jump.i 
- 
- GO_1:
- sim-cache -config <config file> go.ss 50 9 2stone9.in
