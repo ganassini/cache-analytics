@@ -7,7 +7,7 @@
         [x] write to csv file
         [x] go split benchmark
         [x] unified cache benchmark
-        [ ] main script
+        [ ] python script
         [ ] matplotlib
     [ ] exp-2
     [ ] exp-3
