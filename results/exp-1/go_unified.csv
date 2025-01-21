@@ -1,1 +1,2 @@
 n_sets,b_size,assoc,repĺ,cache_size,instructions_used,load_stores,ul1_hits,ul1_misses
+16,16,32,l,8192,548131052,157194937,581307358,124019787
