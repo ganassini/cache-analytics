@@ -6,7 +6,7 @@
     [ ] exp-1
         [x] write to csv file
         [x] go split benchmark
-        [ ] unified cache benchmark
+        [x] unified cache benchmark
         [ ] main script
         [ ] matplotlib
     [ ] exp-2
