@@ -118,6 +118,9 @@ exec_gcc_unified_cache()
 							if ( $i == "ul1.misses" ) {
 								print $(i+1)
 							}
+							if ( $i == "ul1.miss_rate" ) {
+								print $(i+1)
+							}
 						}
 					}' $TMP_FILE | sed 's/,$/\n/' >> $RESULTS_GCC_UNIFIED_FILE
 
@@ -224,6 +227,9 @@ exec_go_unified_cache()
 							if ( $i == "ul1.misses" ) {
 								print $(i+1)
 							}
+							if ( $i == "ul1.miss_rate" ) {
+								print $(i+1)
+							}
 						}
 					}' $TMP_FILE | sed 's/,$/\n/' >> $RESULTS_GO_UNIFIED_FILE
 
@@ -240,7 +246,7 @@ usage()
 if [[ "$#" -gt 2 ]]; then
 	case $1 in
 		gcc)
-			exec_gcc_split_cache
+			#exec_gcc_split_cache
 			exec_gcc_unified_cache
 			exit 0
 			;;
