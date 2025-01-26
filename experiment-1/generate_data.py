@@ -1,6 +1,4 @@
 #!/usr/bin/python
-#
-# TODO ta errado tem q fazer uns tamanho menorzinho
 
 from os import system
 
