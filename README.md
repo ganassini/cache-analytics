@@ -4,8 +4,7 @@
 
 ## TODO
     [x] exp-1
-    [ ] exp-2
-        [ ] generate better data
+    [x] exp-2
     [ ] exp-3
         [ ] matplotlib
     [ ] exp-4

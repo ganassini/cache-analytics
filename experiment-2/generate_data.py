@@ -1,12 +1,14 @@
 #!/usr/bin/python
- 
+# 
+# testes de 4KiB até 64KiB
+
 from os import system
 
 
 def direct_mapping(benchmark):
-    # testes de 1KiB até 128KiB
-    tests = ["64 1", "128 1", "256 1", "512 1", "1024 1", "2048 1", "4096 1", "8192 1"]
-    
+    #tests = ["256 1", "512 1", "1024 1", "2048 1", "4096 1"]
+    tests = ["32 1", "65536  1"]
+
     if benchmark == "gcc":
         for test in tests:
             commandline = "./run.sh gcc d " + test
@@ -20,28 +22,10 @@ def direct_mapping(benchmark):
         return 
 
 
-def fully_associative(benchmark):
-    # testes de 1KiB até 256KiB
-    tests = ["8 8", "16 16", "32 32", "64 64", "128 128"]
-    
-    if benchmark == "gcc":
-        for test in tests:
-            commandline = "./run.sh gcc f " + test
-            system(commandline)
-        return
-
-    if benchmark == "go":
-        for test in tests:
-            commandline = "./run.sh go f " + test
-            system(commandline)
-        return
-
-
 def eight_way(benchmark):
-    # testes de 1KiB até 256KiB
-    tests = ["8 8", "16 8", "32 8", "64 8", "128, 8",
-             "256 8", "512 8", "1024 8", "2048 8"]
-    
+    #tests = ["32 8", "64 8", "128 8", "256 8", "512 8"]
+    tests = ["4 8", "8192 8"]
+
     if benchmark == "gcc":
         for test in tests:
             commandline = "./run.sh gcc 8 " + test
@@ -56,10 +40,9 @@ def eight_way(benchmark):
 
 
 def sixteen_way(benchmark):
-    # testes de 1KiB até 256KiB
-    tests = ["4 16", "8 16", "16 16", "32 16", 
-             "64, 16", "128 16", "256 16", "1024 16"]
-    
+    #tests = ["16 16", "32 16", "64 16", "128 16", "256 16"]
+    tests = ["2 16", "4096 16"]
+
     if benchmark == "gcc":
         for test in tests:
             commandline = "./run.sh gcc 16 " + test
@@ -72,6 +55,30 @@ def sixteen_way(benchmark):
             system(commandline)
         return
 
+
+def fully_associative(benchmark):
+    #tests = ["1 256", "1 512", "1 1024", "1 2048", "1 4096"]
+    tests = ["1 32", "1 65536"]
+
+    if benchmark == "gcc":
+        for test in tests:
+            commandline = "./run.sh gcc f " + test
+            system(commandline)
+        return
+
+    if benchmark == "go":
+        for test in tests:
+            commandline = "./run.sh go f " + test
+            system(commandline)
+        return
+
+
 if __name__ == "__main__":
+    direct_mapping("gcc")
+    direct_mapping("go")
+    eight_way("gcc")
+    eight_way("go")
+    sixteen_way("gcc")
+    sixteen_way("go")
     fully_associative("gcc")
     fully_associative("go")
