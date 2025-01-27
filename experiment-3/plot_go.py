@@ -4,30 +4,32 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-split = pd.read_csv("data/go/split.csv")
-unified = pd.read_csv("data/go/unified.csv")
+files = ["data/go/lru.csv",
+         "data/go/fifo.csv",
+         "data/go/random.csv"]
 
-split_cache_size = split["cache_size"]
-split_misses = split["il1_misses"] + split["dl1_misses"]
+labels = ["LRU", "FIFO", "Random"]
 
-unified_cache_size = unified["cache_size"]
-unified_misses = unified["misses"]
+data = {}
+for file, label in zip(files, labels):
+    df = pd.read_csv(file)
+    data[label] = (df["cache_size"], df["miss_rate"])
 
-bar_width = 0.4
+cache_sizes = list(data[labels[0]][0])
+x = np.arange(len(cache_sizes))
+width = 0.2
 
-x_positions = np.arange(len(split_cache_size))
+plt.figure(figsize=(12, 6))
+for i, label in enumerate(labels):
+    _, miss_rate = data[label]
+    plt.bar(x + i * width, miss_rate, width, label=label)
 
-plt.figure(figsize=(10, 6))
-plt.bar(x_positions - bar_width / 2, split_misses, width=bar_width, label="Misses Cache Separada", color="blue")
-plt.bar(x_positions + bar_width / 2, unified_misses, width=bar_width, label="Misses Cache Unificada", color="orange")
-
-plt.xticks(x_positions, [f"{size}" for size in split_cache_size], rotation=45)
-plt.xlabel("Tamanho da cache (Bytes)")
-plt.ylabel("Misses")
-plt.title("Comparação de Misses Cache Separada e Unificada GO_1")
-plt.legend()
+plt.title("Taxa de Misses por Algoritmo de Substituição GO_1")
+plt.xlabel("Tamanho da Cache (Bytes)")
+plt.ylabel("Taxa de Misses")
+plt.xticks(x + width * (len(labels) - 1) / 2, cache_sizes)
+plt.legend(title="Algoritmo de Substituição")
 plt.grid(axis="y", linestyle="--", linewidth=0.5)
-
 plt.tight_layout()
-plt.show()
 
+plt.show()

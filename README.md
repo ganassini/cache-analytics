@@ -5,10 +5,8 @@
 ## TODO
     [x] exp-1
     [x] exp-2
-    [ ] exp-3
-        [ ] matplotlib
-    [ ] exp-4
-        [ ] matplotlib
+    [x] exp-3
+    [x] exp-4
     [ ] exp-bonus
     [ ] slides
 

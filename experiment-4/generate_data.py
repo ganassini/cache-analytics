@@ -4,56 +4,64 @@ from os import system
 
 
 def s_128(benchmark):
+    tests = ["32 128", "64 128", "128 128", "256 128", "512 128"]
+
     if benchmark == "gcc":
-        for i in range(3, 12):
-            commandline = "./run.sh gcc " + str(2**i) + " 128"
+        for test in tests:
+            commandline = "./run.sh gcc " + test
             system(commandline)
         return
 
     if benchmark == "go":
-        for i in range(3, 12):
-            commandline = "./run.sh go " + str(2**i) + " 128"
+        for test in tests:
+            commandline = "./run.sh go " + test
             system(commandline)
         return 
 
 
 def s_256(benchmark):
+    tests = ["16 256", "32 256", "64 256", "128 256", "256 256"]
+
     if benchmark == "gcc":
-        for i in range(3, 12):
-            commandline = "./run.sh gcc " + str(2**i) + " 256"
+        for test in tests:
+            commandline = "./run.sh gcc " + test
             system(commandline)
         return
 
     if benchmark == "go":
-        for i in range(3, 12):
-            commandline = "./run.sh go " + str(2**i) + " 256"
+        for test in tests:
+            commandline = "./run.sh go " + test
             system(commandline)
         return 
 
 
 def s_512(benchmark):
+    tests = ["8 512", "16 512", "32 512", "64 512", "128 512"]
+
     if benchmark == "gcc":
-        for i in range(3, 12):
-            commandline = "./run.sh gcc " + str(2**i) + " 512"
+        for test in tests:
+            commandline = "./run.sh gcc " + test
             system(commandline)
         return
 
     if benchmark == "go":
-        for i in range(3, 12):
-            commandline = "./run.sh go " + str(2**i) + " 512"
+        for test in tests:
+            commandline = "./run.sh go " + test
             system(commandline)
         return 
 
 def s_1024(benchmark):
+    tests = ["4 1024", "8 1024", "16 1024", "32 1024", "64 1024"]
+
     if benchmark == "gcc":
-        for i in range(3, 12):
-            commandline = "./run.sh gcc " + str(2**i) + " 1024"
+        for test in tests:
+            commandline = "./run.sh gcc " + test
             system(commandline)
         return
 
     if benchmark == "go":
-        for i in range(3, 12):
-            commandline = "./run.sh go " + str(2**i) + " 1024"
+        for test in tests:
+            commandline = "./run.sh go " + test
             system(commandline)
         return 
 
