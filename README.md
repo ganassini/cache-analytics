@@ -3,14 +3,13 @@
 [Github do SimpleScalar](https://github.com/toddmaustin/simplesim-3.0)
 
 ## TODO
-    [ ] exp-1
-        [ ] python script to generate data
-        [ ] matplotlib script to visualize data
+    [x] exp-1
     [ ] exp-2
-        [ ] matplotlib script to visualize data
+        [ ] generate better data
     [ ] exp-3
-        [ ] matplotlib script to visualize data
+        [ ] matplotlib
     [ ] exp-4
+        [ ] matplotlib
     [ ] exp-bonus
     [ ] slides
 

@@ -7,9 +7,9 @@ BENCHMARK_GCC=$DIR/benchmarks/gcc/jump.i
 BENCHMARK_GO=$DIR/benchmarks/go/go.ss" 50 9"
 BENCHMARK_STONE=$DIR/benchmarks/go/2stone9.in
 
-N_SETS=$2
-ASSOC=$3
-CONFIG=$N_SETS:16:$ASSOC
+N_SETS=$3
+ASSOC=$4
+CONFIG=$N_SETS:16:$ASSOC:l
 
 RESULTS_DIR=$DIR/experiment-1/data
 RESULTS_GCC_SPLIT_FILE=$RESULTS_DIR/gcc/split.csv
@@ -24,8 +24,8 @@ exec_gcc_split_cache()
 	echo "Running GCC_4 benchmark with split cache $N_SETS:16:$ASSOC:l..."
 
 	$DIR/simplesim-3.0/sim-cache 	\
-		-cache:il1 il1:$CONFIG:l 	\
-		-cache:dl1 dl1:$CONFIG:l 	\
+		-cache:il1 il1:$CONFIG	 	\
+		-cache:dl1 dl1:$CONFIG	 	\
 		-cache:il2 none 			\
 		-cache:dl2 none 			\
 		-tlb:itlb none 				\
@@ -92,7 +92,7 @@ exec_gcc_unified_cache()
 	
 	$DIR/simplesim-3.0/sim-cache 	\
 		-cache:il1 dl1 				\
-		-cache:dl1 ul1:$CONFIG:l 	\
+		-cache:dl1 ul1:$CONFIG	 	\
 		-cache:il2 none 			\
 		-cache:dl2 none 			\
 		-tlb:itlb none 				\
@@ -144,8 +144,8 @@ exec_go_split_cache()
 	echo "Running GO_1 benchmark with split cache $N_SETS:16:$ASSOC:l..."
 	
 	$DIR/simplesim-3.0/sim-cache 	\
-		-cache:il1 il1:$CONFIG:l 	\
-		-cache:dl1 dl1:$CONFIG:l 	\
+		-cache:il1 il1:$CONFIG	 	\
+		-cache:dl1 dl1:$CONFIG 		\
 		-cache:il2 none 			\
 		-cache:dl2 none 			\
 		-tlb:itlb none 				\
@@ -212,7 +212,7 @@ exec_go_unified_cache()
 
 	$DIR/simplesim-3.0/sim-cache 	\
 		-cache:il1 dl1 				\
-		-cache:dl1 ul1:$CONFIG:l 	\
+		-cache:dl1 ul1:$CONFIG	 	\
 		-cache:il2 none 			\
 		-cache:dl2 none 			\
 		-tlb:itlb none 				\
@@ -260,22 +260,42 @@ exec_go_unified_cache()
 
 usage() 
 {
-	echo "Usage: $0 [gcc|go] [n_sets] [assoc]"
+	echo "Usage: $0 [gcc|go] [u|s] [n_sets] [assoc]"
 
 	exit 0 
 }
 
-if [[ "$#" -gt 2 ]]; then
+if [[ "$#" -gt 3 ]]; then
 	case $1 in
 		gcc)
-			exec_gcc_split_cache
-			exec_gcc_unified_cache
-			exit 0
+			case $2 in
+				u)
+					exec_gcc_unified_cache
+					exit 0
+					;;
+				s)
+					exec_gcc_split_cache
+					exit 0
+					;;
+				*)
+					usage
+					;;
+			esac
 			;;
 		go)
-			exec_go_split_cache
-			exec_go_unified_cache
-			exit 0 
+			case $2 in
+				u)
+					exec_go_unified_cache
+					exit 0
+					;;
+				s)
+					exec_go_split_cache
+					exit 0
+					;;
+				*)
+					usage
+					;;
+			esac
 			;;
 		*)
 			usage
