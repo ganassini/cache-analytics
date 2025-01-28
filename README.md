@@ -1,6 +1,6 @@
 # Cache-sim
 
-Cache-sim is a project about collecting and visualizing data about different cache configurations with 4 mandatory experiments and a bonus one in the "Computer Organization and Architecture II" course at Federal University of Pelotas utilizing the [SimpleScalar](https://github.com/toddmaustin/simplesim-3.0) along with self-made scripts to generate the data and turn it into CSV files and [Matplotlib](https://matplotlib.org/) python library to make graphs.
+Cache-sim is a project about collecting and visualizing data about different cache configurations with 4 mandatory experiments and a bonus one in the "Computer Organization and Architecture II" course at Federal University of Pelotas utilizing [SimpleScalar](https://github.com/toddmaustin/simplesim-3.0) along with self-made scripts to generate the data and turn it into CSV files and [Matplotlib](https://matplotlib.org/) python library to make graphs.
 
 The benchmarks used in this experiment were [GCC](https://www.spec.org/cpu2000/CINT2000/176.gcc/docs/176.gcc.html) and [GO](https://www.spec.org/cpu95/CINT95/099.go/).
 
@@ -20,7 +20,7 @@ The benchmarks used in this experiment were [GCC](https://www.spec.org/cpu2000/C
 ```
 
 ## Experiment 1
-The first experiment made serves the purpose of showing the difference between unified and split caches (instruction L1 cache and data L1 cache) by comparing the number of misses of each cache implementation with different cache sizes.
+The first experiment serves the purpose of showing the difference between unified and split caches (instruction L1 cache and data L1 cache) by comparing the number of misses of each cache implementation with different cache sizes.
 
 ### GCC
 ![Experiment 1 GCC](experiment-1/images/gcc_plot_1.png)
@@ -44,7 +44,7 @@ The third experiment shows how different replacement policies impact on the cach
 ![Experiment 3 GO](experiment-3/images/go_plot_1.png)
 
 ## Experiment 4
-The fourth experiment show how the block size impact on the cache performance.
+The fourth experiment shows how the block size impacts the cache performance.
 
 ### GCC
 ![Experiment 4 GCC](experiment-4/images/gcc_plot_2.png)
@@ -56,7 +56,7 @@ The fourth experiment show how the block size impact on the cache performance.
 ![Experiment 4 GO](experiment-4/images/go_plot_4.png)
 
 ## Bonus Experiment
-The bonus experiment show how the addition of an unified L2 cache compare with the addition of a split L2 cache.
+The bonus experiment show how the addition of an unified L2 cache compares to the addition of a split L2 cache.
 
 ### GCC
 ![Bonus Experiment GCC](experiment-bonus/images/gcc_plot.png)
