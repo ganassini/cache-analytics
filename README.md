@@ -7,7 +7,7 @@
     [x] exp-2
     [x] exp-3
     [x] exp-4
-    [ ] exp-bonus
+    [x] exp-bonus
     [ ] slides
 
 ## Tutorial
