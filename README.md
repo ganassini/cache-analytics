@@ -44,7 +44,7 @@ The third experiment shows how different replacement policies impact on the cach
 ![Experiment 3 GO](experiment-3/images/go_plot_1.png)
 
 ## Experiment 4
-The fourth experiment show how the block size impact on the cache performance
+The fourth experiment show how the block size impact on the cache performance.
 
 ### GCC
 ![Experiment 4 GCC](experiment-4/images/gcc_plot_2.png)
@@ -56,7 +56,7 @@ The fourth experiment show how the block size impact on the cache performance
 ![Experiment 4 GO](experiment-4/images/go_plot_4.png)
 
 ## Bonus Experiment
-The bonus experiment show how the addition of an unified L2 cache compare with the addition of a split L2 cache
+The bonus experiment show how the addition of an unified L2 cache compare with the addition of a split L2 cache.
 
 ### GCC
 ![Bonus Experiment GCC](experiment-bonus/images/gcc_plot.png)
