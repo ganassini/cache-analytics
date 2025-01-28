@@ -18,7 +18,7 @@ plt.bar(x + width / 2, ul2['total_misses'], width, label='L2 Unificada')
 
 plt.xlabel('Tamanho da Cache')
 plt.ylabel('Numero de Misses')
-plt.title('Numero de Misses por Tipo de Cache GCC_4')
+plt.title('Numero de Misses por Tipo de Cache GO_1')
 plt.xticks(x, sl2['l2_cache_size'], rotation=45)
 plt.legend()
 
