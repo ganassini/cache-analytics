@@ -1,14 +1,14 @@
-# Cache-sim
+# cache-analytics
 
-Cache-sim is a project about collecting and visualizing data about different cache configurations with 4 mandatory experiments and a bonus one in the "Computer Organization and Architecture II" course at Federal University of Pelotas utilizing [SimpleScalar](https://github.com/toddmaustin/simplesim-3.0) along with self-made scripts to generate the data and turn it into CSV files and [Matplotlib](https://matplotlib.org/) python library to make graphs.
+cache-analytics is a project about collecting and visualizing data about different cache configurations with 4 mandatory experiments and a bonus one in the "Computer Organization and Architecture II" course at Federal University of Pelotas utilizing [SimpleScalar](https://github.com/toddmaustin/simplesim-3.0) along with self-made scripts to generate the data and turn it into CSV files and [Matplotlib](https://matplotlib.org/) python library to make graphs.
 
 The benchmarks used in this experiment were [GCC](https://www.spec.org/cpu2000/CINT2000/176.gcc/docs/176.gcc.html) and [GO](https://www.spec.org/cpu95/CINT95/099.go/).
 
 ## Tutorial
 
 ```bash
- $ git clone https://github.com/ganassini/cache-sim
- $ cd cache-sim
+ $ git clone https://github.com/ganassini/cache-analytics
+ $ cd cache-analytics
  $ git clone https://github.com/toddmaustin/simplesim-3.0
  $ cd simplesim-3.0
  $ make config-pisa
